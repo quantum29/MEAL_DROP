@@ -1,0 +1,15 @@
+{
+  "name": "restaurantpartnerapp",
+  "version": "1.0.0",
+  "description": "backend used by the restaurant app to recieve orders, include new products ,update its detail and products",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.0"
+  }
+}

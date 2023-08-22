@@ -1,0 +1,20 @@
+{
+  "name": "customerapp",
+  "version": "1.0.0",
+  "description": "The customer uses these services to place order and get notifications",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "priyanshu kumar",
+  "license": "ISC",
+  "dependencies": {
+    "ampq": "^2019.5.11",
+    "amqplib": "^0.10.3",
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.3",
+    "nodemon": "^2.0.22"
+  }
+}
