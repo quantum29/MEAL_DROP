@@ -1,5 +1,4 @@
-require('../dbconfig/dbfile')
-
+require('../../customerApp/dbconfig/dbfile')
 
 async function saveDPartner(dPartner, done) {
   const data = await dPartner.save()
@@ -17,7 +16,6 @@ async function getDPartnerByEmail(dPartner, email, done) {
   return done(undefined, data)
 }
 
-
 async function getDPartnerByPhoneNumber(dPartner, phoneNumber, done) {
   const data = await dPartner.find({ phoneNumber })
   return done(undefined, data)
@@ -29,17 +27,13 @@ async function getDPartnerById(dPartner, dPartnerId, done) {
 }
 
 async function updateDPartner(dPartner, updatedData, email, done) {
-  const data = await dPartner.updateOne(
-    { email },
-    { $set: { ...updatedData } }
-  )
+  const data = await dPartner.updateOne({ email }, { $set: { ...updatedData } })
 
   console.log(data)
   if (data.modifiedCount === 1) {
     return done(undefined, 'successfully updated')
   } else return done('could not find the collection')
 }
-
 
 async function deleteDPartner(dPartner, email, done) {
   const data = await dPartner.remove({ email })

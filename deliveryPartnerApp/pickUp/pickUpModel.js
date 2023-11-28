@@ -12,7 +12,7 @@ const pickUpSchema = mongoose.Schema({
     type: mongoose.SchemaTypes.ObjectId,
     required: true,
   },
-  restaurantId: {
+  restaurantId:{
     type: mongoose.SchemaTypes.ObjectId,
     required: true,
   },
@@ -38,7 +38,5 @@ const pickUpSchema = mongoose.Schema({
   }
 })
 
-
 const pickUp = mongoose.model('pickUp', pickUpSchema)
-
 module.exports = pickUp

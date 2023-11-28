@@ -1,7 +1,7 @@
 const express = require('express')
 
 const router = express.Router()
-const kitchenController = require('./pickUpController')
+const pickUpController = require('./pickUpController')
 
 router.get('/availablePickups',(req,res)=>{
     try {
@@ -12,7 +12,7 @@ router.get('/availablePickups',(req,res)=>{
       //   res.status(400).send("wrong URL??");
       // }
 
-      kitchenController.getAllPickUps((err, result) => { ///////////////
+      pickUpController.getAllPickUps((err, result) => { ///////////////
         if (err) {
           return res.status(400).send({ err })
         } else {
@@ -35,7 +35,7 @@ router.get('/yourPickUp', (req, res) => {
       res.status(400).send("missing Inputs");
     }
 
-    kitchenController.getPickUpByDPartner(dPartnerId,(err, result) => { ///////////
+    pickUpController.getPickUpByDPartner(dPartnerId,(err, result) => { ///////////
       if (err) {
         return res.status(400).send({ err })
       } else {
@@ -60,7 +60,7 @@ router.put("/:id/claim",(req,res)=>{
         res.status(400).send('wrong URL??')
       }
       const pickUpId = id;
-      kitchenController.claimPickUp(pickUpId , dPartnerId , (err, result) => { ////////////
+      pickUpController.claimPickUp(pickUpId , dPartnerId , (err, result) => { ////////////
         if (err) {
           return res.status(400).send({ err })
         } else {
@@ -83,7 +83,7 @@ router.put("/:id/update",(req,res)=>{
         res.status(400).send("wrong URL??");
       }
       const pickUpId = id
-      kitchenController.updateStatusById(pickUpId , dPartnerId ,Status, (err, result) => {
+      pickUpController.updateStatusById(pickUpId , dPartnerId ,Status, (err, result) => {
         if (err) {
           return res.status(400).send({ err })
         } else {
@@ -107,7 +107,7 @@ router.delete("/:id/delete",(req,res)=>{
         res.status(400).send("wrong URL??");
       }
       const pickUpId = id
-      kitchenController.deletePickUpById(pickUpId , dPartnerId , (err, result) => {
+      pickUpController.deletePickUpById(pickUpId , dPartnerId , (err, result) => {
         if (err) {
           return res.status(400).send({ err })
         } else {

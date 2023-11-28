@@ -67,7 +67,7 @@ async function consumeMessages() {
 
         kitchenService.saveKitchen(newKitchen, (err1, result) => {
           if (err1) {
-            const message = { orderId, status: 'NOT PLACED' }
+            const message = { orderId, status: 'REJECTED' }
             publishMessage('STATUS', message)
             return console.log({error: `error saving in kitchen `,err})
           }
